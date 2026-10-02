@@ -7,13 +7,13 @@
     background-position: center;
     background-repeat: no-repeat;
 
-    --fundo-cartao:#636363;
+    --fundo-cartao:#3d3f44;
     --cor-texto: #e1e2e4;
-    --cor-primaria:#6c5ce7;
-    --cor-primaria-destaque: #5b4bc4;
-    --cor-borda:#edf2f7;
+    --cor-primaria:#586c80;
+    --cor-primaria-destaque: #0a345a;
+    --cor-borda:#586c80;
     --cor-perigo:#ff7675;
-    --cor-concluido:#a0aec0;
+    --cor-concluido:#106d03;
 }
 /* Modo escuro */
 
@@ -31,6 +31,17 @@ body.modo-escuro {
     --cor-borda: #4a5568;
 }
 
+.horario-tarefa i {
+    font-size: 0.8rem;      
+    color: #aaaaaa;
+}
+.horario-tarefa {
+    font-size: 0.75rem;    
+    color: #ffffff;         
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;              
+    margin-top: 2px;}
 
 
 *{
@@ -83,9 +94,29 @@ body{
 
 .caixa-entrada{
     display: flex;
+    flex-direction: column;
     gap: 10px;
     margin-bottom: 20px;
 }
+.linha-horario-tarefa {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;        /* Espaço entre a data e o horário */
+    padding-left: 28px;}
+    
+
+input[type="date"]{ 
+    flex:1;
+    
+    padding: 12px 15px;
+    border: 2px solid var(--cor-borda);
+    border-radius: 12px;
+    outline: none;
+    font-size: 0.95rem;
+    background: transparent;
+    color: var(--cor-texto);
+}
+
 
 input[type="text"]{ 
     flex:1;
@@ -98,8 +129,20 @@ input[type="text"]{
     color: var(--cor-texto);
 }
 input[type="text"]:focus{
-    border-color: var(--cor-primaria);
+    border-color: var(--cor-primaria);   
 }
+
+input[type="time"]{ 
+    flex:1;
+    padding: 9px 11px;
+    border: 2px solid var(--cor-borda);
+    border-radius: 12px;
+    outline: none;
+    font-size: 0.95rem;
+    background: transparent;
+    color: var(--cor-texto);
+align-items: center;}
+
 .botao-principal{
     background: var(--cor-primaria);
     color: white;
@@ -163,3 +206,4 @@ color: var(--cor-concluido);
     from{opacity: 0; transform: translateY(10px);}
     to{opacity: 1; transform: translateY(0);}
 }
+
