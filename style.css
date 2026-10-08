@@ -1,35 +1,37 @@
-/* variáveis para facilidade de temas(limpo e tons pasteis */
-:root{
-    background-image: url('1.jpg'); 
-    
-   
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
+:root {
+    /* Mantemos o :root APENAS para guardar as suas variáveis */
     --fundo-cartao:#3d3f44;
     --cor-texto: #e1e2e4;
     --cor-primaria:#586c80;
     --cor-primaria-destaque: #0a345a;
     --cor-borda:#586c80;
     --cor-perigo:#ff7675;
-    --cor-concluido:#106d03;
+    --cor-concluido:#29ac18;
 }
-/* Modo escuro */
 
+/* Modo escuro - Muda as variáveis quando a classe estiver ativa */
 body.modo-escuro {
-   
-    background-image: url('2.jpg'); 
-    
-   
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
+    background-image: url('2.jpg'); /* Sobrescreve a imagem para o modo escuro */
     --fundo-cartao: #000000;
     --cor-texto: #f7fafc;
     --cor-borda: #4a5568;
 }
+
+
+body {
+    background-image: url('1.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
 
 .horario-tarefa i {
     font-size: 0.8rem;      
@@ -41,25 +43,18 @@ body.modo-escuro {
     display: inline-flex;
     align-items: center;
     gap: 4px;              
-    margin-top: 2px;}
-
+    margin-top: 2px;
+}
 
 *{
-box-sizing: border-box;
-margin: 0;
-padding: 0;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-transition: background 0.3s, color 0.3s;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background 0.3s, color 0.3s, background-image 0.3s;
 }
 
-body{
-    background: var(--gradiente-fundo);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
+
 
 .cartao-aplicacao{
     background:var(--fundo-cartao) ;
@@ -68,9 +63,11 @@ body{
     max-width: 420px;
     border-radius: 20px;
     padding: 30px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0, 1);
-
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4); 
 }
+
+
+
 
 .cabecalho-aplicacao{
     display: flex;
@@ -203,6 +200,11 @@ color: var(--cor-concluido);
     text-align: center;
 }
 @keyframes aparecer{
+    from{opacity: 0; transform: translateY(10px);}
+    to{opacity: 1; transform: translateY(0);}
+}
+
+
     from{opacity: 0; transform: translateY(10px);}
     to{opacity: 1; transform: translateY(0);}
 }
